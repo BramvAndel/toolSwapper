@@ -1,6 +1,8 @@
 package dev.vanandel.toolSwapperPaper;
 
 import dev.vanandel.toolSwapperPaper.commands.*;
+import dev.vanandel.toolSwapperPaper.listeners.*;
+import dev.vanandel.toolSwapperPaper.toolLogic.*;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,6 +21,7 @@ public final class ToolSwapperPaper extends JavaPlugin {
         instance = this;
         setupPermissions();
         registerCommands();
+        registerEvents();
         getLogger().info("ToolSwapperPaper enabled!");
     }
 
@@ -26,6 +29,10 @@ public final class ToolSwapperPaper extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("ToolSwapperPaper disabled!");
+    }
+
+    private void registerEvents() {
+        getServer().getPluginManager().registerEvents(new PlayerInteractEventListener(), this);
     }
 
     private void registerCommands() {
