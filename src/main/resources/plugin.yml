@@ -1,0 +1,13 @@
+name: toolSwapper-paper
+version: '1.0-SNAPSHOT'
+main: dev.vanandel.toolSwapperPaper.ToolSwapperPaper
+api-version: '1.21'
+authors: [ BramvanAndel ]
+description: a mod that swaps tools when durability is low
+depend:
+  - Vault
+commands:
+  test:
+    description: test
+  send:
+    description: send
