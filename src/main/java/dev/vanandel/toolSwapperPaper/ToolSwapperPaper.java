@@ -33,6 +33,7 @@ public final class ToolSwapperPaper extends JavaPlugin {
 
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new PlayerInteractEventListener(), this);
+        getServer().getPluginManager().registerEvents(new BlockBreakEventListener(), this);
     }
 
     private void registerCommands() {

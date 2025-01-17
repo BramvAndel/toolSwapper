@@ -43,7 +43,7 @@ public class SwitchTool {
             }
 
             ItemStack toolItem = inventory.getItem(toolSlot);
-            ItemStack secondSlotItem = inventory.getItem(1);
+            ItemStack secondSlotItem = inventory.getItem(firstAvailableSlot);
             inventory.setItem(toolSlot, secondSlotItem);
             // No preferred tool in the hotbar, replace the first available slot with the preferred tool
             if (firstAvailableSlot != -1 && firstAvailableSlot < 9) {
